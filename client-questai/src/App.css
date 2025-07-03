@@ -1,8 +1,145 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body, html, #root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Remove scrollbars for all elements */
+*::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* App Fullscreen Layout */
+.app-root-fullscreen {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: rgba(24,26,27,0.97);
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 3.5rem;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  z-index: 10;
+  min-height: 4.5rem;
+}
+
+.app-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.app-header-title {
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: #43e97b;
+  letter-spacing: 0.04em;
+  margin-left: 0;
+}
+
+.app-header-nav {
+  display: flex;
+  gap: 2.2rem;
+  margin-left: auto;
+  margin-right: 100px;
+}
+
+.app-header-btn {
+  background: none;
+  border: none;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.app-header-btn:hover {
+  background: #23272b;
+}
+
+/* Main Content Styles */
+.app-main-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  text-shadow: 0 2px 8px rgba(67,233,123,0.10);
+  padding-top: 6rem;
+  padding-bottom: 10rem;
+  box-sizing: border-box;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.app-main-title {
+  font-weight: 700;
+  font-size: 3rem;
+  color: #43e97b;
+  margin-bottom: 8px;
+}
+
+.app-main-desc {
+  font-size: 1.3rem;
+  color: #e0e0e0;
+  max-width: 600px;
   text-align: center;
+  margin-bottom: 32px;
+}
+
+/* Footer Styles */
+.app-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #43e97b;
+  background: #000;
+  font-size: 2.2rem;
+  letter-spacing: 0.05em;
+  opacity: 0.97;
+  z-index: 10;
+  box-shadow: 0 -2px 12px 0 rgba(0,0,0,0.18);
+}
+
+.app-footer-highlight {
+  color: #38f9d7;
+  font-weight: 600;
+  margin: 0 0.5em;
+}
+
+.app-footer-signature {
+  font-style: italic;
 }
 
 .logo {
