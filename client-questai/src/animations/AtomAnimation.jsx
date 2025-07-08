@@ -4,7 +4,7 @@ import React, { useRef, useEffect } from 'react';
 const ELECTRONS = 3;
 const RADIUS = 16;
 const SPEEDS = [1, 1.3, 1.7]; // Different speeds for each electron
-const COLORS = ['#39ff14', '#39ff14', '#39ff14']; // Neon green for all
+const COLORS = ['#43e97b', '#43e97b', '#43e97b']; // Neon green for all
 
 export function AtomAnimation({ width = 38, height = 38 }) {
   const canvasRef = useRef(null);
@@ -29,7 +29,7 @@ export function AtomAnimation({ width = 38, height = 38 }) {
           0,
           2 * Math.PI
         );
-        ctx.strokeStyle = 'rgba(57,255,20,0.7)';
+        ctx.strokeStyle = 'rgba(167, 167, 167, 0.7)';
         ctx.lineWidth = 1.2;
         ctx.shadowColor = '#39ff14';
         ctx.shadowBlur = 4;

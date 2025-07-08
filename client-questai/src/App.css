@@ -32,7 +32,7 @@ body, html, #root {
   top: 0;
   left: 0;
   width: 100vw;
-  background: rgba(24,26,27,0.97);
+  background: rgba(18, 18, 19, 0.97);
   box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12);
   display: flex;
   align-items: center;
@@ -67,7 +67,7 @@ body, html, #root {
 .app-header-btn {
   background: none;
   border: none;
-  color: #e0e0e0;
+  color: #43e97b;
   font-size: 1.1rem;
   font-weight: 500;
   cursor: pointer;

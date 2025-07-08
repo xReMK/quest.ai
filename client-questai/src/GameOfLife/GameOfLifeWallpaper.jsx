@@ -43,7 +43,7 @@ export function GameOfLifeWallpaper({ rows = 80, cols = 120, cellSize = 10, blur
     let animationId;
     const ctx = canvasRef.current.getContext('2d');
     // Elegant dark background
-    canvasRef.current.style.background = '#181a1b'; // near-black/grey
+    canvasRef.current.style.background = 'rgba(0, 0, 0, 0.7)'; // near-black/grey
     canvasRef.current.style.backgroundRepeat = 'repeat';
     canvasRef.current.style.backgroundSize = `${cellSize * 2.5}px auto`;
     const draw = () => {
@@ -53,8 +53,8 @@ export function GameOfLifeWallpaper({ rows = 80, cols = 120, cellSize = 10, blur
           if (gridRef.current[r][c]) {
             // Elegant green gradient for live cells
             const grad = ctx.createLinearGradient(0, r * cellSize, 0, (r + 1) * cellSize);
-            grad.addColorStop(0, '#43e97b'); // light green
-            grad.addColorStop(1, '#38f9d7'); // teal-green
+            grad.addColorStop(0, '#fff'); // light green
+            grad.addColorStop(1, '#fff'); // teal-green
             ctx.fillStyle = grad;
             ctx.beginPath();
             // Draw hexagon shape for each cell
