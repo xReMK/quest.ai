@@ -19,19 +19,20 @@ import java.util.Date;
 @Component
 public class JwtTokenProvider {
 
-    private final SecretKey secretKey;
-    private final long jwtExpirationMs;
+    byte[] keyBytes = Decoders.BASE64.decode("eaasfdfedgefgfe9");
+    SecretKey secretKey= Jwts.SIG.HS512.key().build();
+    long jwtExpirationMs=86400000;
 
-    // Read secret and expiration from application.properties
+/*    // Read secret and expiration from application.properties
     public JwtTokenProvider(
             @Value("${security.jwt.token.secret-key:your-very-secure-secret-key-of-appropriate-length-and-randomness}") String secret,
             @Value("${security.jwt.token.expire-length:86400000}") long validityInMilliseconds
     ) {
         // For HS512, the key must be at least 64 bytes (512 bits)
         byte[] keyBytes = Decoders.BASE64.decode(secret);
-        this.secretKey = Keys.hmacShaKeyFor(keyBytes);
+        this.secretKey =
         this.jwtExpirationMs = validityInMilliseconds;
-    }
+    }*/
 
     // Generate JWT token for a given username
     public String generateToken(String username) {
@@ -48,7 +49,7 @@ public class JwtTokenProvider {
 
     // Extract username from JWT token
     public String getUsernameFromToken(String token) {
-        Claims claims = Jwts.parserBuilder()
+        Claims claims = Jwts.parser()
                 .verifyWith(secretKey)
                 .build()
                 .parseSignedClaims(token)
@@ -59,7 +60,7 @@ public class JwtTokenProvider {
     // Validate the JWT token
     public boolean validateToken(String token) {
         try {
-            Jwts.parserBuilder()
+            Jwts.parser()
                     .verifyWith(secretKey)
                     .build()
                     .parseSignedClaims(token);

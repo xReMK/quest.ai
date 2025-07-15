@@ -3,17 +3,37 @@ import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import authorImg from '../assets/Author.jpg';
 import { GameOfLifeWallpaper } from '../GameOfLife/GameOfLifeWallpaper';
+import { useNavigate } from 'react-router-dom';
 
 export default function SignUp() {
   const [form, setForm] = useState({ username: '', email: '', password: '' });
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Username: ${form.username}\nEmail: ${form.email}\nPassword: ${form.password}`);
+    setLoading(true);
+    try {
+      const res = await fetch('http://localhost:8080/api/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        alert('Sign up successful!');
+        navigate('/dashboard');
+      } else {
+        alert(data.message || 'Sign up failed');
+      }
+    } catch (err) {
+      alert('Network error');
+    }
+    setLoading(false);
   };
 
   return (
