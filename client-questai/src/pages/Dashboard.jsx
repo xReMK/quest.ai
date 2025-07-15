@@ -1,9 +1,11 @@
 import DashboardCosmosWallpaper from "../animations/DashboardCosmosWallpaper";
+import Sidebar from "../pages/Sidebar";
 
 export default function Dashboard() {
   return (
     <div style={{ width: "100vw", height: "100vh", position: "relative", overflow: "hidden" }}>
       <DashboardCosmosWallpaper />
+       <Sidebar />
       {/* Add your dashboard content here */}
       <div style={{
         position: "relative",
