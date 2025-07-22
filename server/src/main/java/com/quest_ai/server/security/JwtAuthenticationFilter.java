@@ -1,3 +1,4 @@
+/*
 package com.quest_ai.server.security;
 
 import jakarta.servlet.FilterChain;
@@ -41,6 +42,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 }
+*/
 /*
 
 JwtAuthenticationFilter is a Spring Security filter that intercepts every HTTP request to the backend. Its job is to:
@@ -264,5 +266,7 @@ Set in SecurityContextHolder	Spring Security treats request as authenticated
 Controller/Service access	Can get user info/roles from security context
 In short:
 This step is what tells Spring Security, "This request is from a real, authenticated user. Trust the JWT, and let the user access protected resources according to their roles."
- */
+ *//*
 
+
+*/

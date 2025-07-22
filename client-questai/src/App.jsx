@@ -23,17 +23,7 @@ function WallpaperWrapper({ children }) {
 
 function App() {
   return (
-    <Router>
-      <WallpaperWrapper>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/home" element={<LandingPage />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
-      </WallpaperWrapper>
-    </Router>
+    <Dashboard />
   );
 }
 

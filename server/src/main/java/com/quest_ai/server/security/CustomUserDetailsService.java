@@ -1,3 +1,4 @@
+/*
 package com.quest_ai.server.security;
 
 import com.quest_ai.server.model.User;
@@ -23,3 +24,4 @@ public class CustomUserDetailsService implements UserDetailsService {
                 user.getUserName(), user.getPassword(), new ArrayList<>());
     }
 }
+*/

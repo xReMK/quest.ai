@@ -1,3 +1,4 @@
+/*
 package com.quest_ai.server.security;
 
 import io.jsonwebtoken.Claims;
@@ -23,6 +24,7 @@ public class JwtTokenProvider {
     SecretKey secretKey= Jwts.SIG.HS512.key().build();
     long jwtExpirationMs=86400000;
 
+*/
 /*    // Read secret and expiration from application.properties
     public JwtTokenProvider(
             @Value("${security.jwt.token.secret-key:your-very-secure-secret-key-of-appropriate-length-and-randomness}") String secret,
@@ -32,7 +34,8 @@ public class JwtTokenProvider {
         byte[] keyBytes = Decoders.BASE64.decode(secret);
         this.secretKey =
         this.jwtExpirationMs = validityInMilliseconds;
-    }*/
+    }*//*
+
 
     // Generate JWT token for a given username
     public String generateToken(String username) {
@@ -77,3 +80,4 @@ public class JwtTokenProvider {
     }
 }
 
+*/

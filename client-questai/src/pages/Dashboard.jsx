@@ -140,13 +140,16 @@ export default function Dashboard() {
     setMessages(prev => [...prev, { role: "user", content: query }]);
     setPromptFired(true);
     try {
+      console.log("Sending query to backend:", query);
+      
       const res = await fetch("http://localhost:8080/api/ai/query", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: query })
       });
-      const data = await res.json();
-      setMessages(prev => [...prev, { role: "assistant", content: data.reply || "No response." }]);
+      const data = await res.text();
+      console.log("Received response from backend:", data);
+      setMessages(prev => [...prev, { role: "assistant", content: data || "No response." }]);
     } catch (err) {
       setMessages(prev => [...prev, { role: "assistant", content: "Network error. Please try again." }]);
     }
