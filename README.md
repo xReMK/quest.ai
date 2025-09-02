@@ -1,2 +1,2 @@
 # quest.ai
-This is a personal project Im working on, to enable tech enthusiasts to consume more from their fav peeps &amp; avoiding fomo like me
+This is a personal project which aims to enable tech enthusiasts consume more from their fav peeps avoiding the ineviatble fomo
