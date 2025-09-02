@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from "react";
 
-const STAR_COUNT = 160;
+const STAR_COUNT = 300;
 const STAR_COLOR = "#fff";
 const BG_COLOR = "#18191c";
-const ARC_RADIUS = 3.7; // normalized to min(width, height)/2
+const ARC_RADIUS = 3.2; // normalized to min(width, height)/2
 
 function randomBetween(a, b) {
   return a + Math.random() * (b - a);
@@ -13,7 +13,7 @@ function createStars(count) {
   // theta: angle, r: radius (0.5 to 1 for even spread), blinkSpeed: how fast it blinks
   return Array.from({ length: count }).map(() => ({
     theta: randomBetween(Math.PI, 2 * Math.PI), // start from bottom left to top right
-    r: randomBetween(0.5, ARC_RADIUS),
+    r: randomBetween(0, ARC_RADIUS),
     size: randomBetween(0.5, 1.8),
     blinkSpeed: randomBetween(0.5, 1.2),
     blinkPhase: Math.random() * Math.PI * 2,
@@ -53,7 +53,7 @@ export default function DashboardCosmosWallpaper() {
         if (star.theta > 2 * Math.PI) {
           star.theta -= Math.PI; // wrap to bottom left
           star.r = randomBetween(0.5, ARC_RADIUS);
-          star.size = randomBetween(1, 2.2);
+          star.size = randomBetween(1, 1.6);
           star.blinkSpeed = randomBetween(1, 2.5);
           star.blinkPhase = Math.random() * Math.PI * 2;
         }
